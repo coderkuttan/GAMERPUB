@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GAMERPUB</title>
+    <style>
+        body {
+            background: #000;
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #ffffff;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        #container {
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); }
+            to { transform: translateY(0); }
+        }
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 2px solid #ffcc00;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #ffffff;
+            font-size: 18px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #ff6600;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+        input[type="submit"] {
+            background-color: #ff6600;
+            color: #ffffff;
+            border: 2px solid #ffcc00;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #e65c00;
+            transform: scale(1.1);
+        }
+        h1 {
+            font-size: 40px;
+            color: #ffcc00;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        h2 {
+            font-size: 28px;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+        #actions ul {
+            list-style: none;
+            padding: 0;
+        }
+        #actions li {
+            margin: 10px 0;
+        }
+        #actions a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        #actions a:hover {
+            color: #ffffff;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999999;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <h1>Welcome to GAMERPUB</h1>
+        <div id="accountSection">
+            <h2>Create an Account</h2>
+            <form action="phpgame.php" method="POST">
+                <input type="text" name="username" placeholder="Enter your username" required /><br/>
+                <input type="password" name="password" placeholder="Enter your password" required /><br/>
+                <input type="submit" name="submit" value="Create Account" />
+            </form>
+        </div>
+
+        <div id="actions">
+            <h2>Account Actions</h2>
+            <ul>
+                <li><a href="phpgame.php?action=view">View Accounts</a></li>
+                <li><a href="phpgame.php?action=update">Update Account</a></li>
+                <li><a href="phpgame.php?action=delete">Delete Account</a></li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 GAMERPUB</p>
+        </footer>
+    </div>
+</body>
+</html>
